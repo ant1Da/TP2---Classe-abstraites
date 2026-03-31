@@ -4,6 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        /// QUESTIONS
+        /// 1) Pourquoi la classe appareil est-elle abstraite ?
+        /// Elle est abstraite car elle sert de modèle pour d'autres classes qui vont hériter de ses propriétés et méthodes. Elle ne peut pas être instanciée directement, mais elle fournit une structure commune pour les classes dérivées. En étant abstraite, elle permet de définir des méthodes qui doivent être implémentées par les classes dérivées, assurant ainsi une certaine cohérence dans la hiérarchie des classes.
+        /// 2) Peut-on écrire Appareil a = new Appareil(...) ?
+        /// Non, on ne peut pas instancier une classe abstraite. Appareil est une classe abstraite, donc on ne peut pas créer d'instance de cette classe directement. On doit créer une classe dérivée qui hérite de Appareil et instancier cette classe dérivée.
+        /// 3) Quelle est la différence entre une méthode virtual et une méthode abstract dans une classe abstraite ?
+        /// Une méthode virtual propose l'option d'être redéfinie au sein de la classe dérivée, tandis qu'une méthode abstract doit être redéfinie dans la classe dérivée. Une méthode virtual peut avoir une implémentation par défaut, tandis qu'une méthode abstract n'en a pas.
+         
+        Appareil appareil1 = new Ordinateur("Lenovo", "Thinkpad", new DateTime(2020, 5, 1), 15.6);
+        appareil1.Allumer();
+        appareil1.AfficherType();
+        appareil1.AfficherInfos();
+        appareil1.AfficherGarantie();
+        Console.WriteLine(appareil1);
     }
 }
