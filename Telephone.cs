@@ -9,13 +9,19 @@ class Smartphone : Appareil
     {
         this.nbCapteursPhoto = nbCapteursPhoto;
     }
-    public smartphone(string marque, string modele, DateTime anneeFabrication, int nbCapteursPhoto) : base(marque, modele, anneeFabrication)
+    public Smartphone(string marque, string modele, DateTime anneeFabrication, int nbCapteursPhoto) : base(marque, modele, anneeFabrication)
     {
         this.nbCapteursPhoto = nbCapteursPhoto;
     }
     public override TimeSpan CalculerAncienneté()
     {
-        return DateTime.Now - getAnneeFabrication();
+        // Calcul de l'ancienneté en années
+        Console.WriteLine($"Calcul de l'ancienneté pour le smartphone {getMarque()} {getModele()}");
+        return TimeSpan.FromDays((DateTime.Now - getAnneeFabrication()).TotalDays / 365);
+    }
+    public override void AfficherType()
+    {
+        Console.WriteLine("Ceci est un smartphone.");
     }
     public override void AfficherInfos()
     {

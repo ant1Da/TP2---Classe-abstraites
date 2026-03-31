@@ -15,7 +15,8 @@ class Ordinateur : Appareil
     }
     public override TimeSpan CalculerAncienneté()
     {
-        return DateTime.Now - getAnneeFabrication();
+        Console.WriteLine($"Calcul de l'ancienneté pour l'ordinateur {getMarque()} {getModele()}");
+        return TimeSpan.FromDays((DateTime.Now - getAnneeFabrication()).TotalDays / 365);
     }
     public override void AfficherInfos()
     {
@@ -23,10 +24,14 @@ class Ordinateur : Appareil
         Console.WriteLine($"Modèle: {getModele()}");
         Console.WriteLine($"Année de fabrication: {getAnneeFabrication()}");
         Console.WriteLine($"Taille de l'écran: {tailleEcran} pouces");
-        Console.WriteLine($"Ancienneté: {CalculerAncienneté().TotalDays / 365} ans");
+        Console.WriteLine($"Ancienneté: {CalculerAncienneté()} ans");
     }
     public override string ToString()
     {
         return $"Ordinateur - Marque: {getMarque()}, Modèle: {getModele()}, Taille de l'écran: {tailleEcran} pouces";
+    }
+    public override void AfficherType()
+    {
+        Console.WriteLine("Ceci est un ordinateur.");
     }
 }

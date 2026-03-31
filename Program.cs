@@ -23,12 +23,28 @@ class Program
         // ToString() est utile pour fournir une représentation textuelle d'un objet. Lorsque vous appelez Console.WriteLine(appareil1), le système appelle automatiquement la méthode ToString() de l'objet appareil1 pour obtenir une chaîne de caractères à afficher. En redéfinissant la méthode ToString() dans la classe Ordinateur, nous pouvons personnaliser la façon dont les informations de l'ordinateur sont affichées
 
         // Exercice 3
-        smartphone smartphone1 = new smartphone("Apple", "iPhone 12", new DateTime(2020, 10, 23), 2);
+        Smartphone smartphone1 = new Smartphone("Apple", "iPhone 12", new DateTime(2020, 10, 23), 2);
         smartphone1.Allumer();
         smartphone1.AfficherType();
         smartphone1.AfficherGarantie();
         smartphone1.AfficherInfos();
         
-        // Si Smartphone ne
+        // Si Smartphone ne redéfinit pas AfficherType(), quelle version sera utilisée ?
+        // Si Smartphone ne redéfinit pas AfficherType(), la version de la classe Appareil sera utilisée, affichant "Ceci est un appareil." au lieu de quelque chose de plus spécifique comme "Ceci est un smartphone."
+
+        // Exercice 4
+        Appareil smartphone2 = new Smartphone("Apple", "iPhone 17 Pro", new DateTime(2025, 6, 1), 3);
+        Appareil smartphone3 = new Smartphone("Samsung", "Galaxy S26", new DateTime(2026, 1, 15), 4);
+        Appareil ordinateur2 = new Ordinateur("Dell", "XPS 15", new DateTime(2023, 3, 10), 15.6);
+        Appareil ordinateur3 = new Ordinateur("HP", "Spectre x360", new DateTime(2024, 8, 20), 13.3);
+        List<Appareil> appareils = new List<Appareil> {smartphone2, smartphone3, ordinateur2, ordinateur3};
+        foreach (Appareil appareil in appareils)
+        {
+            Console.WriteLine(appareil.CalculerAncienneté());
+            appareil.Allumer();
+            appareil.AfficherType();
+            appareil.AfficherGarantie();
+            appareil.AfficherInfos();
+        }
     }
 }
