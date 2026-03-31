@@ -18,5 +18,17 @@ class Program
         appareil1.AfficherInfos();
         appareil1.AfficherGarantie();
         Console.WriteLine(appareil1);
+
+        // Pourquoi ToString() est-elle utile ?
+        // ToString() est utile pour fournir une représentation textuelle d'un objet. Lorsque vous appelez Console.WriteLine(appareil1), le système appelle automatiquement la méthode ToString() de l'objet appareil1 pour obtenir une chaîne de caractères à afficher. En redéfinissant la méthode ToString() dans la classe Ordinateur, nous pouvons personnaliser la façon dont les informations de l'ordinateur sont affichées
+
+        // Exercice 3
+        smartphone smartphone1 = new smartphone("Apple", "iPhone 12", new DateTime(2020, 10, 23), 2);
+        smartphone1.Allumer();
+        smartphone1.AfficherType();
+        smartphone1.AfficherGarantie();
+        smartphone1.AfficherInfos();
+        
+        // Si Smartphone ne
     }
 }
