@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TP2 - Classe abstraites")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+772799c8702e416a66599bfbde2073743d49a18e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+147cd9266b0fff490f8a240ac37a277ef5dc0242")]
 [assembly: System.Reflection.AssemblyProductAttribute("TP2 - Classe abstraites")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TP2 - Classe abstraites")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

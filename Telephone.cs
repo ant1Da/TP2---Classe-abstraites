@@ -31,4 +31,8 @@ class Smartphone : Appareil
         Console.WriteLine($"Nombre de capteurs photo: {nbCapteursPhoto}");
         Console.WriteLine($"Ancienneté: {CalculerAncienneté().TotalDays / 365} ans");
     }
+    public override string ToString()
+    {
+        return $"Smartphone - Marque: {getMarque()}, Modèle: {getModele()}, Nombre de capteurs photo: {nbCapteursPhoto}";
+    }
 }

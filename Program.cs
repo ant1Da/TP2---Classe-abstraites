@@ -35,9 +35,9 @@ class Program
         // Exercice 4
         Appareil smartphone2 = new Smartphone("Apple", "iPhone 17 Pro", new DateTime(2025, 6, 1), 3);
         Appareil smartphone3 = new Smartphone("Samsung", "Galaxy S26", new DateTime(2026, 1, 15), 4);
-        Appareil ordinateur2 = new Ordinateur("Dell", "XPS 15", new DateTime(2023, 3, 10), 15.6);
-        Appareil ordinateur3 = new Ordinateur("HP", "Spectre x360", new DateTime(2024, 8, 20), 13.3);
-        List<Appareil> appareils = new List<Appareil> {smartphone2, smartphone3, ordinateur2, ordinateur3};
+        Appareil ordinateur1 = new Ordinateur("Dell", "XPS 15", new DateTime(2023, 3, 10), 15.6);
+        Appareil ordinateur2 = new Ordinateur("HP", "Spectre x360", new DateTime(2024, 8, 20), 13.3);
+        List<Appareil> appareils = new List<Appareil> {smartphone2, smartphone3, ordinateur1, ordinateur2};
         foreach (Appareil appareil in appareils)
         {
             Console.WriteLine(appareil.CalculerAncienneté());
@@ -46,5 +46,20 @@ class Program
             appareil.AfficherGarantie();
             appareil.AfficherInfos();
         }
+        // Quel type de données C# permet de stocker une date ?
+        // C# utilise le type de données DateTime pour stocker une date et une heure. DateTime permet de représenter des dates et des heures avec une grande précision, ainsi que d'effectuer des opérations sur les dates, comme l'ajout ou la soustraction de jours, de mois ou d'années.
+        // Pourquoi peut-on stocker des objets de type Ordinateur et Smartphone dans une liste d'Appareil ?
+        // On peut stocker des objets de type Ordinateur et Smartphone dans une liste d'Appareil parce que Ordinateur et Smartphone sont des classes dérivées de la classe abstraite Appareil. En C#, une liste d'un type de base (comme Appareil) peut contenir des objets de n'importe quelle classe qui hérite de ce type de base. Cela permet d'utiliser le polymorphisme, où les méthodes appelées sur les objets de la liste seront résolues à l'exécution en fonction du type réel de l'objet (Ordinateur ou Smartphone), même si la liste est déclarée pour contenir des Appareils.
+        Dictionary<string, Appareil> dicoAppareils = new Dictionary<string, Appareil>();
+        dicoAppareils.Add(ordinateur1.getModele(), ordinateur1);
+        dicoAppareils.Add(ordinateur2.getModele(), ordinateur2);
+        dicoAppareils.Add(smartphone2.getModele(), smartphone2);
+        dicoAppareils.Add(smartphone3.getModele(), smartphone3);
+        foreach (KeyValuePair<string, Appareil> entry in dicoAppareils)
+        {
+            Console.WriteLine($"Clé: {entry.Key}, Valeur: {entry.Value}");
+        }
+        // A quoi sert un dictionnaire dans un programme ?
+        // Un dictionnaire est une collection de paires clé-valeur qui permet de stocker et de récupérer des données de manière efficace. Il est utilisé pour associer une clé unique à une valeur, ce qui facilite la recherche et l'accès aux données. Dans un programme, un dictionnaire peut être utilisé pour stocker des informations telles que des paramètres de configuration, des données d'utilisateur, ou dans ce cas, des objets Appareil associés à leurs modèles respectifs. Les dictionnaires offrent une performance rapide pour les opérations de recherche, d'ajout et de suppression d'éléments grâce à leur structure interne basée sur des tables de hachage.
     }
 }
